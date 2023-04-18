@@ -1,48 +1,198 @@
-<html>
-	<head>
-		<style>
-			body{
-					background: lightcyan;
-			}
-			.conteiner{
-					display:grid;
-					grid-template-columns:100px 50px auto auto;
-					grid-template-rows:100px 100px auto;
-					grid-gap: 3px;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #entradas{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(177, 133, 218);
+        align-items: center;
+        height: 80px;
+       } 
+       #neuronios1E2{
+        display: flex;
+        justify-content: center;
+       }
+       #sinapses-entrada{
+        display: flex;
+        justify-content: center;
+       }
+        #sina-multi-1,#sina-multi-2{
+        background-color: rgb(224, 99, 83);
+        padding: 15px;
+        border: 1px solid rgb(153, 78, 48);
+        margin: 10px 10px 10px 10px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700; 
+        color:aliceblue
+       }
+       #neuronio1,#neuronio2,#neuronio3,#neuronio4{
+        background-color: rgb(166, 199, 226);
+        padding: 15px;
+        border: 1px solid rgb(94, 150, 11);
+        margin: 5px 5px 10px 5px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700; 
+       }
+       #sina-multi-1,#sina-multi-2,#sina-multi-7,#sina-multi-8,#sina-multi-3,#sina-multi-4,#sina-multi-5,#sina-multi-6{
+        background-color: rgb(224, 99, 83);
+        padding: 15px;
+        border: 1px solid rgb(153, 78, 48);
+        margin: 10px 10px 10px 10px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700; 
+        color:aliceblue
+       }
+       #sinapses-segunda-camada,#neuronios3E4,#saidas,#saidas-liquidas{
+        display:flex;
+        justify-content: center;
+       }
+       #baias1,#baias2{
+        background-color: rgb(215, 226, 166);
+        padding: 15px;
+        border: 1px solid rgb(46, 71, 6);
+        margin: 5px 5px 10px 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700; 
+       }
+       #saida-bruta,#saida-liquida{
+        background-color: rgb(238, 233, 161);
+        padding: 15px;
+        border: 1px solid rgb(24, 36, 6);
+        margin: 5px 5px 10px 5px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700; 
+       }
+       
+    </style>
+    
+</head>
+<body>
+    <div id="entradas">
+        <input type="number" name="" id="entrada-1">
+        <input type="number" name="" id="entrada-2">
+        <input type="button" value="inicia" onclick="calcula()">
+    </div>
+    <div id="sinapses-entrada">
+        
+        <div id="sina-multi-1">0.93</div>
+        <div id="sina-multi-2">0.55</div>
+        
+    </div>
+    <div id="neuronios1E2">
+        
+        <div id="neuronio1">0</div>
+        <div id="neuronio2">0</div>
+        
+    </div>
+    <div id="sinapses-segunda-camada">
+        
+        <div id="sina-multi-3">0.93</div>
+        <div id="sina-multi-4">0.55</div>
+        <div id="sina-multi-5">0.93</div>
+        <div id="sina-multi-6">0.55</div>         
+    </div>
+    <div id="neuronios3E4">
+        <div id="baias1">0.25</div>
 
-			}
-			.item{
-				background: darkcyan;
-				border: 1px solid black;
-				text-align: center;
-				color:white;
-			}
+        <div id="neuronio3">0.93</div>
+        <div id="neuronio4">0.55</div>
 
-		</style>
-	</head>
-	<body>
-		<div class="conteiner">						
-			<div id="it">CFB CURSOS 1</div>
-			<div class="item">CFB CURSOS 2</div>
-			<div class="item">CFB CURSOS 3</div>
-			<div class="item">CFB CURSOS 4</div>
-			<div class="item">CFB CURSOS 5</div>
-			<div class="item">CFB CURSOS 6</div>
-			<div class="item">CFB CURSOS 7</div>
-			<div class="item">CFB CURSOS 8</div>
-			<div class="item">CFB CURSOS 9</div>
-		</div>
-		<script type="text/javascript">
-			
-			let p1=window.document.getElementById('it').innerText;
-			window.document.write(p1);
-			let num=[1,2,3,4,5];
-			let soma=0;
-			for (var i = 0; i < num.length; i++) {
-						window.document.write(soma+num[i])
-					}
-			var cor=document.getElementById('it');
-			cor.style.color="red";		
-		</script>
-	</body>
+        <div id="baias1">0.25</div>
+    </div>
+    <div id="sinapses-entrada">
+        
+        <div id="sina-multi-7">0.93</div>
+        <div id="sina-multi-8">0.55</div>
+        
+    </div>
+    <div id="saidas">
+        <div id="saida-bruta">1</div>
+        
+    </div>
+    <div id="saidas-liquidas">
+    <div id="saida-liquida"></div>
+    </div>
+</body>
+<script>
+    function print(params) {
+        return console.log(params)
+        
+    }
+    function Bid(id) {
+        return document.getElementById(id) 
+    }
+    function BidInner(id){
+        return document.getElementById(id).innerText
+    }
+    /*var entrada1=Number(Bid('entrada-1').value)
+    var entrada2=Number(Bid('entrada-2').value)
+    var entradas=[entrada1,entrada2]
+    //-------------------------------------
+    var sinapse1=Number(Bid('sina-multi-1').innerText)
+    var sinapse2=Number(Bid('sina-multi-2').innerText)
+    var sinapses=[sinapse1,sinapse2]
+    //-------------------------------------*/
+    function calcula() {
+        var entrada1=Number(Bid('entrada-1').value)
+        var entrada2=Number(Bid('entrada-2').value)
+        var entradas=[entrada1,entrada2]
+        //-------------------------------------
+        var novo=entradas.length
+        var sinapse1=Number(Bid('sina-multi-1').innerText)
+        var sinapse2=Number(Bid('sina-multi-2').innerText)
+        var sinapses=[sinapse1,sinapse2]
+        //-------------------------------------
+        var neuronio1=Bid('neuronio1')
+        var neuronio2=Bid('neuronio2')
+       //-------------------------------------
+        var element = []
+        //-------------------------------------
+        for (let index = 0; index < novo; index++) {  
+            element.push(entradas[index]*sinapses[index])   
+        }
+        neuronio1.innerHTML=element[0]
+        neuronio2.innerHTML=element[1]
+        //-------------------------------------
+        for (let index = 0; index <element.length; index++) {
+            const element = array[index];
+            
+        }
+       
+
+        
+    }
+    
+    
+    
+</script>
 </html>
