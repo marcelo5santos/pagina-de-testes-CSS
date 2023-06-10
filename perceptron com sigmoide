@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOr+/PitnnE6x4c18kA8W8t",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/marcelo5santos/pagina-de-testes-CSS/blob/marcelo5santos-pagina-ia-perceptron/perceptron%20com%20sigmoide\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 73,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e__SAHZEyxFM",
+        "outputId": "80a2015a-d136-4482-9ce5-dff842e56efe"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0.0, 0.0, 0.0]\n",
+            "[0.5, 0.5, 0.5]\n"
+          ]
+        }
+      ],
+      "source": [
+        "from time import sleep\n",
+        "\n",
+        "inputs=[0,0]\n",
+        "\n",
+        "sinapses_1=[2,0.3,0.37]\n",
+        "\n",
+        "neuronios_1=[]\n",
+        "for i in range(len(inputs)):\n",
+        "  for j in range(len(sinapses_1)):\n",
+        "    calculos=inputs[i]*sinapses_1[j]\n",
+        "    neuronios_1.append(calculos)\n",
+        "neuronios_refi= []\n",
+        "for arredondar in range(len(neuronios_1)):\n",
+        "  refinar=round(neuronios_1[arredondar],3)\n",
+        "  neuronios_refi.append(refinar)\n",
+        "neuronios_1=neuronios_refi\n",
+        "somas=[]\n",
+        "for l in range(3):\n",
+        "    somas1=neuronios_1[l]+neuronios_1[l+1]\n",
+        "    somas.append(somas1)\n",
+        "print(somas)\n",
+        "neuronios_1=somas\n",
+        "neuronios_1_sig=[]\n",
+        "for k in range(len(neuronios_1)):\n",
+        "  sigmoide=1/(1+2.71828**(-neuronios_1[k]))\n",
+        "  neuronios_1_sig.append(sigmoide)\n",
+        "print(neuronios_1_sig)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(len(neuronios_1)/2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "335ZJK1zocIm",
+        "outputId": "42b426b9-6f1b-4010-d5ba-e8acc4f50cf1"
+      },
+      "execution_count": 64,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1.5\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
